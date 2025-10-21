@@ -1,0 +1,38 @@
+name: Hardened Webserver Penetration Testing Framework
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  zap_scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Start webserver
+      run: |
+        python3 -m http.server 8080 &
+        sleep 5
+
+    - name: Run OWASP ZAP Baseline Scan
+      run: |
+        mkdir -p zap-reports
+        docker run --rm -v $(pwd)/zap-reports:/zap/reports \
+          -t ghcr.io/zaproxy/zaproxy:stable \
+          zap-baseline.py \
+          -t http://localhost:8080 \
+          -r baseline-report.html \
+          -J baseline-report.json \
+          -z "-config api.disablekey=true"
+
+    - name: Upload ZAP Report as Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: zap-scan-report
+        path: zap-reports/
+

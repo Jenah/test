@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Portfolio | Jenah & Alex</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4ebf5 100%);
+      margin: 0;
+      padding: 50px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 40px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .profile-header {
+      position: relative;
+      height: 220px;
+      background: linear-gradient(135deg, #0073e6, #005bb5);
+    }
+
+    .profile-header img {
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 80px 25px 30px;
+      text-align: center;
+    }
+
+    .name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .title {
+      color: #0073e6;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .details {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      color: #0073e6;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #005bb5;
+      transform: scale(1.2);
+    }
+
+    .contact-btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background: #0073e6;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .contact-btn:hover {
+      background: #005bb5;
+    }
+
+    @media (max-width: 480px) {
+      .card-content {
+        padding: 70px 20px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Profile 1 -->
+    <div class="card">
+      <div class="profile-header">
+        <img src="person1.jpg" alt="Jenah Karthick" />
+      </div>
+      <div class="card-content">
+        <div class="name">Jenah Karthick Palanikumar</div>
+        <div class="title">Cybersecurity Specialist</div>
+        <div class="details">
+          MSc in Computer Science (Adaptive Cybersecurity)<br>
+          National University of Galway, Ireland<br><br>
+          Skilled in Network Security, Python, and Machine Learning.
+        </div>
+        <div class="social-links">
+          <a href="https://linkedin.com" target="_blank">🔗</a>
+          <a href="https://github.com" target="_blank">💻</a>
+          <a href="mailto:jenah@example.com">📧</a>
+        </div>
+        <a href="mailto:jenah@example.com" class="contact-btn">Contact Jenah</a>
+      </div>
+    </div>
+
+    <!-- Profile 2 -->
+    <div class="card">
+      <div class="profile-header">
+        <img src="person2.jpg" alt="Alten" /> </div>
+      <div class="card-content">
+        <div class="name">Alten Cleetus Joseph
+        </div>
+        <div class="title">Cybersecurity Specialist</div>
+        <div class="details">
+         MSc in Computer Science (Adaptive Cybersecurity)<br>
+          National University of Galway, Ireland<br><br>
+          Expertise in AI, Predictive Analytics, and Cloud Computing.
+        </div>
+        <div class="social-links">
+          <a href="https://linkedin.com" target="_blank">🔗</a>
+          <a href="https://github.com" target="_blank">💻</a>
+          <a href="mailto:alex@example.com">📧</a>
+        </div>
+        <a href="mailto:alex@example.com" class="contact-btn">Contact Alex</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
